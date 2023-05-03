@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="layoutandsearchbar.Delivery">
+
+    <ScrollView>
+        <StackLayout Margin="10">
+            <StackLayout HeightRequest="50" BackgroundColor="White">
+
+            </StackLayout>
+            <Frame CornerRadius="20" Padding="0">
+                <StackLayout HeightRequest="48" BackgroundColor="Gray">
+                    <SearchBar Placeholder="Search"
+                           x:Name="searchbar"
+                           TextChanged="searchbar_TextChanged" BackgroundColor="LightGray"  TextColor="Black"/>
+                </StackLayout>
+            </Frame>
+            <StackLayout HeightRequest="150" BackgroundColor="White">
+                <Image Source="tiffin1.jpg" Aspect="AspectFill"/>
+            </StackLayout>
+            <StackLayout HeightRequest="50" BackgroundColor="White">
+                <Label Text="Explore" TextColor="Black" FontSize="Subtitle"  HorizontalTextAlignment="Center"/>
+            </StackLayout>
+            <Frame CornerRadius="10" Padding="0">
+                <StackLayout HeightRequest="75" BackgroundColor="LightGray">
+                    <Label Text="Offres" TextColor="Black" FontSize="25"  HorizontalTextAlignment="Start"/>
+                    <Label Text="Up to 60% OFF,Flat Discount," TextColor="Black" HorizontalOptions="Start"/>
+                    <Label Text="and other great offers" TextColor="Black" HorizontalOptions="Start"/>
+                </StackLayout>
+            </Frame>
+            <Label Text="Today's Special" TextColor="Black" HorizontalOptions="Center"/>
+            <CollectionView x:Name="MyCollectionView1"
+                      HeightRequest="200" 
+                        WidthRequest="200" >
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Horizontal"
+                                HorizontalItemSpacing="0"
+                                VerticalItemSpacing="0"
+                                Span="2"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+
+                        <StackLayout BackgroundColor="LightGray">
+                            <Frame Padding="0" CornerRadius="100">
+                                <Image Source="{Binding Image}"
+                                   HeightRequest="80" Aspect="AspectFill"/>
+                            </Frame>
+                            <Label Text="{Binding Name}"
+                                   HorizontalOptions="Center"
+                                   FontSize="Medium"/>
+                        </StackLayout>
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Label Text="WHAT'S ON YOUR MIND?" TextColor="Black" HorizontalOptions="Center"/>
+            <CollectionView x:Name="MyCollectionView"
+                        HeightRequest="150">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Horizontal"
+                                   ItemSpacing="2"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BackgroundColor="LightGray"
+                           Padding="10"
+                           CornerRadius="10">
+                            <StackLayout>
+                                <Image Source="{Binding Image}"
+                                   HeightRequest="110" Aspect="AspectFill"/>
+                                <Label Text="{Binding Name}"
+                                   HorizontalOptions="Center"
+                                   FontSize="Medium" TextColor="Black"/>
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Label Text="Today's Special" TextColor="Black" HorizontalOptions="Center"/>
+            <CollectionView x:Name="MyCollectionView2"
+                      HeightRequest="300" >
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
+                                HorizontalItemSpacing="5"
+                                VerticalItemSpacing="5"
+                                Span="1"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BackgroundColor="LightGray"
+                           Padding="10"
+                           CornerRadius="10">
+                            <StackLayout HeightRequest="180">
+                                <Image Source="{Binding Image}"
+                                   HeightRequest="160" Aspect="AspectFill"/>
+                                <Label Text="{Binding Name}"
+                                   HorizontalOptions="Center"
+                                   FontSize="Medium" TextColor="Black"/>
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="layoutandsearchbar.MainPage"
+             BackgroundColor="WhiteSmoke"
+            xmlns:local="clr-namespace:layoutandsearchbar"
+            NavigationPage.HasNavigationBar="False"
+            BarBackgroundColor="FloralWhite"
+            SelectedTabColor="Red"
+            UnselectedTabColor="Black"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom">
+    <local:Delivery Title="Delivery" IconImageSource="delivery.png"/>
+    <local:Delivery Title="Dining" IconImageSource="dining.png"/>
+    <local:Delivery Title="Money" IconImageSource="wallet.png"/>
+</TabbedPage>
